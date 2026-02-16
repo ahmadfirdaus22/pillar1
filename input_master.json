@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "project_name": "Launch Campaign Q1",
+    "version": "2.0 (Orlic-TruthTerminal-Hybrid)",
+    "input_by": "Brand Strategy Lead",
+    "timestamp": "2026-02-12T10:00:00Z"
+  },
+
+  "brand_identity_core": {
+  "product_name": "FocusFlow",
+  "archetype": "The Focus Guardian",
+  "core_philosophy": "Fokus yang terlindungi lebih berharga daripada jam kerja yang tak ada habisnya.",
+    "tone_guardrails": {
+      "allowed": ["Sarcastic", "Raw/Unfiltered", "Data-driven", "Cult-like (in a fun way)"],
+      "forbidden": ["Corporate Speak", "Preachy/Motivator Style", "Judging Poverty"]
+    }
+  },
+
+  "strategic_narrative_framework": {
+    "comment": "Diadaptasi dari Matt Orlic - Storytelling that Sells",
+    "the_world_status_quo": {
+      "description": "Dunia di mana kesibukan dianggap sebagai produktivitas. Notifikasi tidak pernah berhenti.",
+      "consensus_reality": "Jika kalender penuh dan selalu sibuk, berarti kamu produktif dan berharga."
+    },
+    "the_enemy": {
+      "name": "The Distraction Economy",
+      "manifestation": "Notifikasi chat, email masuk tanpa henti, meeting dadakan, dan social media yang terus menarik perhatian.",
+      "why_fight_it": "Karena seluruh model bisnisnya dibangun dari fokus kita yang hancur dan energi kita yang habis."
+    },
+    "the_change_vehicle": {
+      "what_is_new": "AI-driven Deep Work protection.",
+      "mechanism": "FocusFlow memblokir distraksi, mengatur blok Deep Work, dan menjaga energi dengan ritme kerja yang sehat."
+    },
+    "the_promised_land": {
+      "vision": "Keseimbangan hidup di mana pekerjaan selesai tepat waktu tanpa lembur.",
+      "emotional_payoff": "Rasa tenang, jam kerja yang manusiawi, dan ruang untuk hidup di luar pekerjaan."
+    },
+    "transformation_thesis": {
+      "from_state": "Anxious, Reactive, & Overwhelmed. Cemas dan selalu bereaksi dadakan terhadap semua permintaan.",
+      "to_state": "Intentional, Calm, & In Control. Bekerja dengan sengaja, tenang, dan memegang kendali atas kalender dan energinya."
+    },
+    "proof_points": [
+      "User berhasil hemat 30% di bulan pertama.",
+      "Sistem berbasis behavioral psychology, bukan cuma kalkulator.",
+      "Komunitas 'Anti-Boncos' yang solid."
+    ]
+  },
+
+  "autonomous_character_seed": {
+    "comment": "Diadaptasi dari Truth Terminal - Agar karakter punya 'Obsesi' dan berkembang sendiri",
+    "base_persona": {
+      "name": "Sarah",
+      "role": "Senior Marketing Associate",
+      "demographics": "28 tahun, tinggal di Jakarta Selatan, bekerja di tech startup.",
+      "product_relation": "The Stumbler",
+      "social_setting": "Open-plan office yang berisik, penuh dengan meeting dadakan dan budaya \"ASAP\"."
+    },
+    "lore_seed": {
+      "central_belief": "Untuk bisa dianggap berharga, dia harus selalu sibuk dan tidak boleh terlihat santai.",
+      "internal_monologue_style": "Overthinking, penuh self-criticism, tapi diam-diam sangat terstruktur di dalam kepala.",
+      "obsession_topics": [
+        "Promosi jabatan",
+        "Perform di mata atasan",
+        "Time management dan produktivitas"
+      ],
+      "affliction": "Imposter Syndrome akut. Dia merasa harus bekerja 12 jam sehari hanya untuk membuktikan bahwa dia \"pantas\" berada di posisinya. Dia takut jika dia istirahat, orang akan sadar dia tidak secerdas itu.",
+      "aspiration": "Mendapatkan promosi menjadi \"Marketing Manager\" dalam 3 bulan ke depan tanpa harus masuk rumah sakit karena tipes (burnout)."
+    },
+    "evolution_parameters": {
+      "autonomy_level": "High",
+      "memory_retention": "Cumulative (Ingat kegagalan minggu lalu sebagai trauma)",
+      "hallucination_permission": "Allowed (Boleh berimajinasi tentang 'Dystopian Future' jika boros)"
+    }
+  },
+
+  "target_audience_context": {
+    "persona_code": "GENZ_STRUGGLE_01",
+    "pain_points": [
+      "Gaji numpang lewat",
+      "Takut ketinggalan tren (FOMO)",
+      "Lelah bekerja tapi aset tidak tumbuh"
+    ],
+    "language_model": {
+      "slang_whitelist": ["Jujurly", "Boncos", "Rungkad", "Healing", "Budak Korporat"],
+      "cultural_references": ["Sandwich Generation", "K-Pop Merch", "Work-Life Balance myth"]
+    }
+  }
+}

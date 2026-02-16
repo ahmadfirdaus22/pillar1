@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "generated_for": "Pillar 2 (Hook Intelligence System)",
+    "source_input": "NarrativeGenesisInput_v2.0",
+    "generation_timestamp": "2026-02-12T10:05:00Z",
+    "schema_version": "2.1.0",
+    "notes": "Extended schema for automated scraping bot + deeper psychological hooks."
+  },
+
+  "scraping_runtime_config": {
+    "platforms": [
+      "tiktok",
+      "instagram_reels",
+      "youtube_shorts"
+    ],
+    "language_filters": [
+      "id",
+      "id-mixed-en"
+    ],
+    "time_window": {
+      "type": "LAST_DAYS",
+      "value": 14
+    },
+    "min_engagement_threshold": {
+      "views_min": 50000,
+      "engagement_rate_min": 0.03
+    },
+    "max_video_duration_seconds": 60,
+    "include_only_public": true
+  },
+
+  "scraping_parameters": {
+    "target_audience_keywords": [
+      "Gaji UMR Jakarta",
+      "Sandwich Generation Indonesia",
+      "Korban Paylater",
+      "Budgeting Anak Kost",
+      "Frugal Living Extreme"
+    ],
+    "pain_point_queries": [
+      "Cara tolak ajakan bukber hemat",
+      "Stress liat saldo ATM",
+      "Gaji cuma numpang lewat meme",
+      "Menyesal beli barang diskon"
+    ],
+    "cultural_slang_filters": [
+      "Jujurly",
+      "Boncos",
+      "Rungkad",
+      "FOMO",
+      "Healing",
+      "Self Reward"
+    ],
+    "competitor_archetypes_to_monitor": [
+      "The Angry Financial Advisor (e.g., Dave Ramsey style but local)",
+      "The Relatable Broke Gen Z (e.g., TikTok curhat daily life)",
+      "The Minimalist Rebel"
+    ],
+
+    "target_audience_keywords_detailed": [
+      {
+        "keyword": "Gaji UMR Jakarta",
+        "priority": 1,
+        "match_mode": "PHRASE"
+      },
+      {
+        "keyword": "Sandwich Generation Indonesia",
+        "priority": 1,
+        "match_mode": "PHRASE"
+      },
+      {
+        "keyword": "Budgeting Anak Kost",
+        "priority": 2,
+        "match_mode": "CONTAINS"
+      },
+      {
+        "keyword": "Frugal Living Extreme",
+        "priority": 3,
+        "match_mode": "CONTAINS"
+      }
+    ],
+
+    "pain_point_queries_detailed": [
+      {
+        "query": "Cara tolak ajakan bukber hemat",
+        "priority": 1,
+        "match_mode": "CONTAINS"
+      },
+      {
+        "query": "Stress liat saldo ATM",
+        "priority": 1,
+        "match_mode": "CONTAINS"
+      },
+      {
+        "query": "Gaji cuma numpang lewat meme",
+        "priority": 2,
+        "match_mode": "CONTAINS"
+      },
+      {
+        "query": "Menyesal beli barang diskon",
+        "priority": 2,
+        "match_mode": "CONTAINS"
+      }
+    ],
+
+    "negative_filters": {
+      "blocked_keywords": [
+        "saham",
+        "crypto",
+        "MLM",
+        "forex",
+        "trading harian",
+        "cepat kaya",
+        "uang kaget"
+      ],
+      "blocked_hashtags": [
+        "sahammurah",
+        "cryptoindonesia",
+        "mlm",
+        "cepatkaya",
+        "uanginstan"
+      ]
+    }
+  },
+
+  "content_selection_rules": {
+    "required_elements": {
+      "must_contain_any_slang": true,
+      "use_cultural_slang_filters_from_parameters": true,
+      "allow_caption_only_match": true,
+      "allow_on_screen_text_match": true
+    },
+    "exclude_creators_patterns": [
+      ".*forex.*",
+      ".*binomo.*",
+      ".*crypto.*",
+      ".*trader.*",
+      ".*sultan.*",
+      ".*mlm.*"
+    ],
+    "max_toxicity_level": "MEDIUM",
+    "allow_dark_humor": true,
+    "disallow_direct_shaming": true
+  },
+
+  "psychological_trigger_map": {
+    "primary_emotion": "VALIDATION_OF_STRUGGLE",
+    "secondary_emotion": "LOW_LEVEL_HOPE",
+
+    "core_beliefs_to_challenge": [
+      "Self reward setiap gajian itu wajib.",
+      "Selama masih bisa bayar cicilan berarti aman.",
+      "Semua orang pakai paylater jadi gue juga nggak apa-apa.",
+      "Gaji kecil = mustahil bisa merasa cukup."
+    ],
+
+    "identity_labels_targeted": [
+      "anak_kost",
+      "umr_worker",
+      "sandwich_generation",
+      "first_jobber_gen_z"
+    ],
+
+    "tone_guidelines": {
+      "default": "empathetic_blunt",
+      "avoid": [
+        "humiliation",
+        "victim_blaming",
+        "toxic_positivity"
+      ],
+      "allow": [
+        "dark_humor_ringankan",
+        "relatable_self_roast"
+      ]
+    },
+
+    "hook_angles_required": [
+      {
+        "type": "The Enemy Call-Out",
+        "structure": "Stop percaya kalau [Common Myth] itu normal.",
+        "example_context": "Stop percaya kalau Self Reward itu wajib.",
+        "ideal_clip_features": [
+          "close_up_face",
+          "big_text_overlay",
+          "fast_cuts",
+          "direct_gaze_to_camera"
+        ],
+        "avoid_features": [
+          "aesthetic_travel_montage",
+          "flexing_luxury_items"
+        ]
+      },
+      {
+        "type": "The Relatable Failure",
+        "structure": "POV: Lo baru gajian tapi [Bad Situation].",
+        "example_context": "POV: Lo baru gajian tapi langsung ludes buat bayar paylater.",
+        "ideal_clip_features": [
+          "screenshots_of_bank_app",
+          "tik_tok_text_storytime",
+          "reaction_faces",
+          "meme_format"
+        ],
+        "avoid_features": [
+          "overnight_success_story",
+          "investment_flex"
+        ]
+      },
+      {
+        "type": "The Conspiracy (Truth Terminal Flavor)",
+        "structure": "Mereka nggak mau lo tau soal [Secret/Fact].",
+        "example_context": "Bank nggak mau lo tau kalau bunga paylater itu lebih jahat dari rentenir.",
+        "ideal_clip_features": [
+          "whisper_tone_or_low_voice",
+          "on_screen_highlight_of_terms_conditions",
+          "text_overlay_revealing_numbers",
+          "stitch_with_news_clip"
+        ],
+        "avoid_features": [
+          "clickbait_no_substance",
+          "pure_rant_without_fact"
+        ]
+      }
+    ]
+  },
+
+  "narrative_phase_constraints": {
+    "current_phase": "PHASE_1_AWARENESS",
+    "allowed_hook_categories": [
+      "Curiosity Gap",
+      "Negative/Fear-Based (e.g., 'Jangan lakukan ini')",
+      "Identity Confirmation (e.g., 'Buat lo yang gajinya UMR')"
+    ],
+    "blocked_hook_categories": [
+      "Direct Promise (e.g., 'Cara jadi kaya dadakan')",
+      "High-Level Investment (e.g., 'Tips Saham Multibagger')",
+      "Success Flexing (e.g., 'Lihat profit gue hari ini')"
+    ],
+
+    "phase_definitions": {
+      "PHASE_1_AWARENESS": {
+        "allowed_hook_categories": [
+          "Curiosity Gap",
+          "Negative/Fear-Based",
+          "Identity Confirmation"
+        ],
+        "blocked_hook_categories": [
+          "Direct Promise",
+          "High-Level Investment",
+          "Success Flexing"
+        ],
+        "scraping_bias": {
+          "prefer_content_tone": [
+            "relatable_struggle",
+            "soft_callout",
+            "conspiracy_light"
+          ],
+          "preferred_content_types": [
+            "curhat",
+            "storytime",
+            "reaction_to_bill_or_saldo"
+          ]
+        }
+      },
+      "PHASE_2_PAIN_INTENSIFY": {
+        "allowed_hook_categories": [
+          "Negative/Fear-Based",
+          "Enemy Call-Out",
+          "Conspiracy"
+        ],
+        "blocked_hook_categories": [
+          "Success Flexing"
+        ],
+        "scraping_bias": {
+          "prefer_content_tone": [
+            "pain_point_intense",
+            "urgent_warning"
+          ],
+          "preferred_content_types": [
+            "debt_confession",
+            "paylater_crash_story"
+          ]
+        }
+      },
+      "PHASE_3_MICRO_SOLUTIONS": {
+        "allowed_hook_categories": [
+          "Micro Solution",
+          "Identity Upgrade",
+          "Before After (Soft)"
+        ],
+        "blocked_hook_categories": [
+          "High-Level Investment",
+          "Big Promise Overnight"
+        ],
+        "scraping_bias": {
+          "prefer_content_tone": [
+            "practical_tip",
+            "small_win_celebration"
+          ],
+          "preferred_content_types": [
+            "budgeting_tutorial",
+            "frugal_living_hack"
+          ]
+        }
+      }
+    }
+  },
+
+  "implementation_notes": {
+    "query_construction_hint": "Gabungkan 'target_audience_keywords_detailed' + 'pain_point_queries_detailed' sebagai query utama ke API/platform. Gunakan 'priority' untuk menentukan urutan eksekusi.",
+    "filtering_hint": "Setelah hasil didapat, filter berdasarkan 'cultural_slang_filters' dan 'content_selection_rules.required_elements'. Drop konten yang melanggar 'negative_filters' dan 'exclude_creators_patterns'.",
+    "phase_usage_hint": "Gunakan 'current_phase' untuk memilih konfigurasi dari 'phase_definitions'. Field 'allowed_hook_categories' dan 'scraping_bias' di dalam fase menentukan jenis konten yang diprioritaskan.",
+    "stability_note": "Field-field lama ('scraping_parameters', 'psychological_trigger_map', 'narrative_phase_constraints.current_phase') dipertahankan untuk kompatibilitas dengan sistem sebelumnya."
+  }
+}
+

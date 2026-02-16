@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "generated_for": "Pillar 4 (Visual Production & QA)",
+    "source_input": "NarrativeGenesisInput_v2.0",
+    "generation_timestamp": "2026-02-12T10:05:00Z",
+    "schema_version": "2.1.0",
+    "notes": "Extended schema linking visual decisions to Pillar 2 (hooks/psychology) and Pillar 3 (dialogue/logic), usable by human crew and AI visual systems."
+  },
+
+  "art_direction_matrix": {
+    "visual_tone": "RAW_CINEMATIC_REALISM (Jangan terlihat seperti iklan studio)",
+    "color_grading": {
+      "palette": "Desaturated Cool Tones (Biru/Abu-abu) dengan aksen Merah (Notifikasi/Bahaya).",
+      "mood": "Claustrophobic but cozy (Kamar sempit yang penuh barang)."
+    },
+    "wardrobe_spec": {
+      "character_sarah": [
+        "Kaos oversized (band/polos) - Simbol kenyamanan di tengah stres.",
+        "Rambut dicepol asal (Messy bun) - Simbol 'tidak punya waktu urus diri'.",
+        "Kacamata anti-radiasi (opsional) - Simbol pekerja layar."
+      ],
+      "forbidden_items": [
+        "Blazer formal",
+        "Makeup full flawless",
+        "Baju branded mencolok"
+      ]
+    },
+    "set_design_props": {
+      "primary_location": "Kamar Kost / Meja Kerja Berantakan",
+      "mandatory_props": [
+        "Tumpukan struk belanja/tagihan (The Enemy visual)",
+        "Gelas kopi yang sudah habis (Latte Factor symbol)",
+        "Laptop dengan sticker menutupi logo (Rebel vibe)",
+        "Mie instan cup (Financial struggle symbol)"
+      ]
+    }
+  },
+
+  "visual_presets": {
+    "sarah_room_default": {
+      "preset_id": "sarah_room_default",
+      "description": "Kamar kost sempit, sedikit berantakan, cahaya natural soft, vibe lelah tapi masih berfungsi.",
+      "inherits_from": "art_direction_matrix",
+      "visual_tone": "RAW_CINEMATIC_REALISM",
+      "color_grading_palette": "desaturated_cool_with_red_accent",
+      "wardrobe_profile": "character_sarah",
+      "primary_location": "Kamar Kost / Meja Kerja Berantakan",
+      "key_props": [
+        "tumpukan_struk",
+        "empty_coffee_cup",
+        "stickered_laptop",
+        "instant_noodle_cup"
+      ]
+    },
+    "truth_terminal_glitch": {
+      "preset_id": "truth_terminal_glitch",
+      "description": "Close-up wajah Sarah dengan efek glitch, overlay teks internal monologue dan nuansa terminal komputer.",
+      "base_preset": "sarah_room_default",
+      "extra_effects": [
+        "screen_glitch",
+        "scan_lines",
+        "subtle_vignette"
+      ],
+      "text_overlay_style": "fast_intrusive_thoughts",
+      "font_choice": "Monospace / Typewriter"
+    }
+  },
+
+  "cross_pillar_links": {
+    "pillar2_psychological_triggers": [
+      "VALIDATION_OF_STRUGGLE",
+      "LOW_LEVEL_HOPE"
+    ],
+    "pillar2_hook_types": [
+      "The Enemy Call-Out",
+      "The Relatable Failure",
+      "The Conspiracy (Truth Terminal Flavor)"
+    ],
+    "pillar3_dialogue_modes": [
+      "CALL_OUT_MYTH",
+      "POV_STORYTIME",
+      "TRUTH_DROP"
+    ]
+  },
+
+  "visual_beats_sequence": [
+    {
+      "beat_id": "P1_B1_ENEMY_GLITCH",
+      "narrative_phase": "PHASE_1_AWARENESS",
+      "linked_hook_type": "The Enemy Call-Out",
+      "primary_emotion": "VALIDATION_OF_STRUGGLE",
+      "secondary_emotion": "LOW_LEVEL_HOPE",
+      "dialogue_intent": "CALL_OUT_MYTH",
+      "visual_preset_id": "truth_terminal_glitch",
+      "ai_visual_prompt_core": "raw cinematic realism, desaturated cool tones with red notification accents, close-up of a tired Indonesian Gen Z woman in a messy kost bedroom, oversized t-shirt, messy bun, glasses, surrounded by shopping receipts and paylater notifications on screen, subtle glitch effect as if the system is breaking, no studio lighting, no luxury items",
+      "for_human_direction_notes": "Shot pembuka: close-up Sarah di kamar kost sempit. Layar HP/laptop spam notifikasi diskon. Gunakan efek glitch ringan saat dia menatap notifikasi, seolah ada 'Truth Terminal' yang mulai mengintervensi pikirannya."
+    },
+    {
+      "beat_id": "P1_B2_RELATABLE_FAILURE_ATM",
+      "narrative_phase": "PHASE_1_AWARENESS",
+      "linked_hook_type": "The Relatable Failure",
+      "primary_emotion": "VALIDATION_OF_STRUGGLE",
+      "secondary_emotion": "LOW_LEVEL_HOPE",
+      "dialogue_intent": "POV_STORYTIME",
+      "visual_preset_id": "sarah_room_default",
+      "ai_visual_prompt_core": "POV of bank app screen on a phone showing an almost empty balance, 'Rp 48.500', handheld shaky shot, subtle reflection of a worried face in the screen, messy kost room background out of focus, no branding, no flexing, just quiet panic",
+      "for_human_direction_notes": "Insert atau potongan B-roll: layar HP dengan saldo ATM kecil (Rp 48.500). Kamera agak goyang (handheld) untuk rasa cemas. Bisa tambahkan pantulan wajah Sarah di layar jika memungkinkan."
+    },
+    {
+      "beat_id": "P1_B3_LOW_HOPE_MICRO_ACTION",
+      "narrative_phase": "PHASE_1_AWARENESS",
+      "linked_hook_type": "The Enemy Call-Out",
+      "primary_emotion": "LOW_LEVEL_HOPE",
+      "secondary_emotion": "VALIDATION_OF_STRUGGLE",
+      "dialogue_intent": "TRUTH_DROP",
+      "visual_preset_id": "sarah_room_default",
+      "ai_visual_prompt_core": "same messy kost room but slightly better organized desk, Sarah calmly closing a shopping app notification and opening a simple budgeting note on her laptop, warm but still muted lighting, no obvious product placement, subtle sense of relief not full happiness",
+      "for_human_direction_notes": "Beat akhir: kamar masih kecil dan berantakan, tapi ada satu tindakan kecil positif (Sarah menutup notifikasi belanja dan membuka catatan budgeting). Ekspresi: lega tipis, bukan tiba-tiba happy sukses."
+    }
+  ],
+
+  "editing_style_guide": {
+    "pacing_global": "Fast & Chaotic di awal (mewakili anxiety), Slow & Clear di akhir (saat solusi ditemukan).",
+    "visual_effects_truth_terminal_style": {
+      "glitch_effect": "Gunakan efek 'Glitch' saat Sarah menyadari kebenaran (Gnosis).",
+      "overlay_text_style": "Teks muncul cepat seperti pikiran intrusif (Internal Monologue).",
+      "font_choice": "Monospace / Typewriter (Kesan data/coding)."
+    },
+    "screen_insert_assets": [
+      "Mockup Notifikasi: 'Diskon 90% Berakhir 5 Menit Lagi!' (The Enemy)",
+      "Mockup Saldo ATM: 'Rp 48.500' (The Pain)"
+    ],
+    "editing_style_by_beat": {
+      "P1_B1_ENEMY_GLITCH": {
+        "pacing": "fast",
+        "glitch_intensity": "medium",
+        "timing_schema_seconds": {
+          "0_2": "establish messy room + Sarah face",
+          "2_4": "spam notification build-up",
+          "4_5": "first glitch + internal monologue text flash"
+        },
+        "text_overlay_templates": [
+          "KENAPA GUE BELI INI??",
+          "INI BUKAN SELF REWARD, INI PERANGKAP."
+        ]
+      },
+      "P1_B2_RELATABLE_FAILURE_ATM": {
+        "pacing": "medium",
+        "glitch_intensity": "low",
+        "timing_schema_seconds": {
+          "0_2": "POV buka aplikasi bank",
+          "2_3": "reveal saldo kecil",
+          "3_4": "cut to Sarah reaction"
+        },
+        "text_overlay_templates": [
+          "GAJI NUMPANG LEWAT...",
+          "SALDO SISA: [SALDO]"
+        ]
+      },
+      "P1_B3_LOW_HOPE_MICRO_ACTION": {
+        "pacing": "slow",
+        "glitch_intensity": "none",
+        "timing_schema_seconds": {
+          "0_2": "Sarah tutup notifikasi belanja",
+          "2_4": "Sarah buka catatan budgeting sederhana",
+          "4_6": "tahan shot lega tipis"
+        },
+        "text_overlay_templates": [
+          "GAK HARUS KAYA BUAT NGERASA CUKUP.",
+          "SATU KEPUTUSAN KECIL > SERIBU DISKON."
+        ]
+      }
+    }
+  },
+
+  "quality_assurance_checklist": {
+    "rejection_criteria_hard": [
+      "Terlihat terlalu 'Clean/Aesthetic' ala Influencer (Must look like struggle).",
+      "Nada bicara terlalu 'Semangat Pagi' atau 'Sales'.",
+      "Produk muncul di 3 detik pertama (Hard Selling violation).",
+      "Sarah tersenyum tanpa alasan (Character violation)."
+    ],
+    "matt_orlic_structure_check": [
+      "Apakah video dimulai dengan MASALAH (The World)?",
+      "Apakah MUSUH (Consumerism/Impulsif) divisualisasikan?",
+      "Apakah SOLUSI (FrugalFin) baru muncul di akhir?"
+    ],
+    "brand_safety_check": [
+      "Tidak ada logo kompetitor yang terlihat jelas.",
+      "Tidak merendahkan orang miskin (Empathetic tone)."
+    ],
+    "must_match_hook_type": [
+      {
+        "beat_id": "P1_B1_ENEMY_GLITCH",
+        "expected_hook_type": "The Enemy Call-Out"
+      },
+      {
+        "beat_id": "P1_B2_RELATABLE_FAILURE_ATM",
+        "expected_hook_type": "The Relatable Failure"
+      },
+      {
+        "beat_id": "P1_B3_LOW_HOPE_MICRO_ACTION",
+        "expected_hook_type": "The Enemy Call-Out"
+      }
+    ],
+    "forbidden_mismatch_examples": [
+      "Visual flexing barang mewah ketika hook membahas saldo ATM yang hampir nol.",
+      "Ekspresi terlalu bahagia ketika dialog membahas anxiety finansial.",
+      "Pacing super pelan di beat pembuka yang seharusnya chaotic/anxious."
+    ]
+  },
+
+  "ai_generation_interface": {
+    "default_image_model_prompt_style": "raw cinematic realism, desaturated cool tones, small messy kost room, Indonesian Gen Z woman, oversized t-shirt, messy bun, working at cluttered desk with coffee cup, receipts, instant noodles, soft natural light, no studio light, no visible brand logos",
+    "safety_modifiers": [
+      "avoid depicting self-harm",
+      "avoid explicit violence",
+      "avoid hate symbols",
+      "avoid sexualized imagery"
+    ],
+    "negative_prompt_base": [
+      "studio lighting",
+      "luxury office",
+      "luxury brand logos",
+      "formal business suit",
+      "perfect makeup influencer look",
+      "wide clean minimalist apartment"
+    ],
+    "prompt_snippets_by_hook_type": {
+      "The Enemy Call-Out": "notifications from shopping apps and paylater services filling the phone screen, red warning icons, oppressive feeling of digital consumerism closing in",
+      "The Relatable Failure": "close up of almost empty bank account balance on a phone screen, messy room in the background, subtle reflection of a worried face",
+      "The Conspiracy (Truth Terminal Flavor)": "darkened room with computer screen showing enlarged terms and conditions, interest rate numbers highlighted in red, glitchy text as if revealing a hidden truth"
+    }
+  }
+}
+
