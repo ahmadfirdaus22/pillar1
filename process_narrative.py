@@ -21,7 +21,6 @@ from typing import Optional, Dict, Any
 
 import requests
 from dotenv import load_dotenv
-import json_repair
 
 from processors.validator import NarrativeValidator, ValidationReport
 from processors.distributor import distribute_configs
@@ -319,7 +318,7 @@ def _call_openrouter_for_pillars(input_data: Any) -> Dict[str, Any]:
             if raw.endswith("```"):
                 raw = raw[: -3].strip()
 
-        # Aggressive sanitization & repair: fix common LLM JSON issues and use json_repair.
+        # Aggressive sanitization & optional repair: fix common LLM JSON issues.
         import re
         # 1. Fix trailing commas before closing brackets/braces
         raw = re.sub(r',(\s*[}\]])', r'\1', raw)
@@ -327,25 +326,42 @@ def _call_openrouter_for_pillars(input_data: Any) -> Dict[str, Any]:
         try:
             pillars = json.loads(raw)
         except json.JSONDecodeError as first_err:
-            # Second attempt: json_repair can handle truncated strings, quotes, etc.
+            # Try to use json_repair if installed; fall back gracefully otherwise.
             try:
-                pillars = json_repair.loads(raw)
-            except Exception as repair_err:
-                # As a last resort, try to extract the first JSON object and repair that.
+                import json_repair  # type: ignore
+            except ImportError:
+                # Best-effort fallback: try to extract the first JSON object and parse it.
                 match = re.search(r"\{[\s\S]*\}", raw)
                 if match:
                     try:
-                        pillars = json_repair.loads(match.group(0))
-                    except Exception:
+                        pillars = json.loads(match.group(0))
+                    except json.JSONDecodeError:
+                        raise RuntimeError(
+                            f"Failed to parse JSON from OpenRouter response. Original error: {first_err}"
+                        )
+                else:
+                    raise RuntimeError(
+                        f"Failed to parse JSON from OpenRouter response. Original error: {first_err}"
+                    )
+            else:
+                try:
+                    pillars = json_repair.loads(raw)
+                except Exception as repair_err:
+                    # As a last resort, try to extract the first JSON object and repair that.
+                    match = re.search(r"\{[\s\S]*\}", raw)
+                    if match:
+                        try:
+                            pillars = json_repair.loads(match.group(0))
+                        except Exception:
+                            raise RuntimeError(
+                                f"Failed to parse/repair JSON from OpenRouter response. "
+                                f"Original error: {first_err}; repair error: {repair_err}"
+                            )
+                    else:
                         raise RuntimeError(
                             f"Failed to parse/repair JSON from OpenRouter response. "
                             f"Original error: {first_err}; repair error: {repair_err}"
                         )
-                else:
-                    raise RuntimeError(
-                        f"Failed to parse/repair JSON from OpenRouter response. "
-                        f"Original error: {first_err}; repair error: {repair_err}"
-                    )
 
     if not isinstance(pillars, dict):
         raise RuntimeError("Parsed pillars response is not a JSON object.")
