@@ -730,35 +730,6 @@ elif current_section == "Generate & Export":
                         st.rerun()
     
     st.markdown("---")
-    
-    # Preview system prompt
-    st.subheader("3. Preview System Prompt")
-    st.caption("See what the generated system prompt looks like")
-    
-    if st.button("👁️ Preview System Prompt", use_container_width=True):
-        if st.session_state.validation_result is None or not st.session_state.validation_result.is_valid:
-            st.warning("⚠️ Validate input first for accurate preview")
-        
-        try:
-            input_dict = build_input_dict_from_session()
-            report = validate_input_data(input_dict)
-            if report.is_valid:
-                system_prompt = build_full_system_prompt(report.data)
-                st.session_state.system_prompt_preview = system_prompt
-            else:
-                st.error("Cannot generate preview - input contains errors")
-        except Exception as e:
-            st.error(f"Error generating preview: {str(e)}")
-    
-    if st.session_state.get("system_prompt_preview"):
-        st.text_area(
-            "Generated System Prompt",
-            value=st.session_state.system_prompt_preview,
-            height=400,
-            label_visibility="collapsed"
-        )
-    
-    st.markdown("---")
     col1, col2 = st.columns(2)
     with col1:
         if st.button("← Back: Target Audience"):

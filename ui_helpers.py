@@ -131,8 +131,7 @@ def initialize_session_state():
         st.session_state.current_section = "Project Info"
     if 'validation_result' not in st.session_state:
         st.session_state.validation_result = None
-    if 'system_prompt_preview' not in st.session_state:
-        st.session_state.system_prompt_preview = ""
+    # system_prompt_preview removed – legacy key no longer used
     if 'pillar_paths' not in st.session_state:
         st.session_state.pillar_paths = {}
     if 'show_p2_preview' not in st.session_state:
